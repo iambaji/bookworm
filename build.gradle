@@ -18,6 +18,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.5.31' apply false
 }
 
+apply from: "buildscripts/githooks.gradle"
 
 subprojects {
     apply from: "../buildscripts/ktlint.gradle"
