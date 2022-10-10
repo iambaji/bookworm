@@ -1,0 +1,29 @@
+buildscript {
+    ext {
+        compose_version = '1.1.0-beta01'
+        // https://github.com/JLLeitschuh/ktlint-gradle/releases
+        ktlintPluginVersion = "11.0.0"
+        // https://github.com/detekt/detekt/releases
+        detektVersion = "1.22.0-RC1"
+    }
+
+    dependencies {
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintPluginVersion"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.5.31' apply false
+}
+
+
+subprojects {
+    apply from: "../buildscripts/ktlint.gradle"
+    apply from: "../buildscripts/detekt.gradle"
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
