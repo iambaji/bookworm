@@ -1,17 +1,15 @@
-package com.bajishaik.bookie.screens.library
+package com.bajishaik.bookie.screens.reader
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bajishaik.bookie.databinding.FragmentLibraryBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.bajishaik.bookie.databinding.FragmentReaderBinding
 
-@AndroidEntryPoint
-class LibraryFragment : Fragment() {
+class ReaderFragment : Fragment() {
 
-    private lateinit var binding : FragmentLibraryBinding
+    private lateinit var binding : FragmentReaderBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +17,11 @@ class LibraryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = FragmentLibraryBinding.inflate(layoutInflater)
+        binding = FragmentReaderBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

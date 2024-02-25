@@ -1,17 +1,15 @@
-package com.bajishaik.bookie.screens.library
+package com.bajishaik.bookie.screens.readingnow
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bajishaik.bookie.databinding.FragmentLibraryBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.bajishaik.bookie.databinding.FragmentReadingnowBinding
 
-@AndroidEntryPoint
-class LibraryFragment : Fragment() {
+class ReadingNowFragment : Fragment() {
 
-    private lateinit var binding : FragmentLibraryBinding
+    private lateinit var binding : FragmentReadingnowBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +17,7 @@ class LibraryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding = FragmentLibraryBinding.inflate(layoutInflater)
+        binding = FragmentReadingnowBinding.inflate(layoutInflater)
         return binding.root
     }
 }
