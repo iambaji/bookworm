@@ -13,6 +13,13 @@
     <fragment
         android:id="@+id/libraryFragment"
         android:name="com.bajishaik.bookie.screens.library.LibraryFragment"
-        tools:layout="@layout/fragment_library"/>
+        tools:layout="@layout/fragment_library">
+
+        <deepLink
+            app:uri="www.bookie.com"
+            app:action="android.intent.action.VIEW"
+            app:mimeType="application/epub+zip"
+            />
+    </fragment>
 
 </navigation>
