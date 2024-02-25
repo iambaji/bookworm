@@ -1,4 +1,4 @@
-package com.example.bookie
+package com.bajishaik.bookie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

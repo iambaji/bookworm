@@ -1,4 +1,4 @@
-package com.example.bookie
+package com.bajishaik.bookie
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

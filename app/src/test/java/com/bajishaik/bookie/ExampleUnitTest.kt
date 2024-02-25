@@ -1,4 +1,4 @@
-package com.example.bookie
+package com.bajishaik.bookie
 
 import org.junit.Test
 
