@@ -13,8 +13,14 @@ import javax.inject.Inject
 
 data class UIState(
     val isLoading : Boolean = false,
-    val books : List<File> = emptyList()
+    val books : List<File> = emptyList(),
+    val events : UIEvents = UIEvents.Initial
 )
+
+sealed interface UIEvents{
+    data object Initial : UIEvents
+    data class GotoReader(val bookId : Int) : UIEvents
+}
 
 @HiltViewModel
 class LibraryViewModel @Inject constructor(private val booksRepository: BooksRepository) : ViewModel() {
@@ -29,4 +35,10 @@ class LibraryViewModel @Inject constructor(private val booksRepository: BooksRep
             _uiState.update { it.copy(isLoading = false,books = books) }
         }
     }
+
+    fun onBooksItemClick(book : Int) = viewModelScope.launch{
+        _uiState.update { it.copy(events = UIEvents.GotoReader(book)) }
+    }
+
+    fun eventHandled() = _uiState.update { it.copy(events = UIEvents.Initial) }
 }

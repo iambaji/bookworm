@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.bajishaik.bookie.R
 import com.bajishaik.bookie.databinding.FragmentReadingnowBinding
 
 class ReadingNowFragment : Fragment() {
@@ -18,6 +20,9 @@ class ReadingNowFragment : Fragment() {
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentReadingnowBinding.inflate(layoutInflater)
+        binding.fullscreenReader.setOnClickListener {
+            findNavController().navigate(R.id.readerFragment)
+        }
         return binding.root
     }
 }
