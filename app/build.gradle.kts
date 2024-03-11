@@ -55,6 +55,7 @@ dependencies {
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
+    implementation(files("libs/epublib-core-3.1-complete.jar"))
     // Choose one of the following:
     // Material Design 3
     implementation("androidx.compose.material3:material3")
